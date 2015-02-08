@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "setup": "npm install; npm start",
+    "setup": "npm install;",
     "prepublish": "killall grunt; grunt compile; grunt watch&",
     "start": "npm run-script prepublish; nodemon bin/www"
   },
