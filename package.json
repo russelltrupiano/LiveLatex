@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "setup": "npm install;",
-    "prepublish": "killall grunt; grunt compile; grunt watch&",
-    "start": "npm run-script prepublish; nodemon bin/www"
+    "setup": "npm install",
+    "gruntworkDev": "killall grunt; grunt compile; grunt watch&",
+    "gruntwork": "killall grunt; grunt compile;",
+    "startDev": "npm run-script gruntworkDev; nodemon bin/www",
+    "start": "npm run-script gruntwork; node bin/www"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
