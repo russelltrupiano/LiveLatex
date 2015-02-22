@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/index.min.css')
+    script(src="//localhost:35729/livereload.js")
+    script(src="/javascripts/index-lib.min.js")
+    script(src="/lib/pdfjs-src/build/pdf.js")
+  body
+
+    section.header-section
+        div.header-content
+            h1 Live Latex
+
+    block content
+
+    script(src="javascripts/main.js")

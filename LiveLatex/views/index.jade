@@ -1,0 +1,223 @@
+extends layout
+
+block content
+
+    section.menu-section
+        div.menu-content
+            div.left-menu
+                span
+                    img(src="/img/hamburger-menu.png")
+            div.document-title
+                h3 Untitled
+            div.right-menu
+                button Recompile
+
+    section.document-section
+        div.left-document
+            div#editor.
+                \documentclass{article}
+
+                \usepackage{graphicx}
+                \usepackage{algorithm}
+                \usepackage{algorithmic}
+                \usepackage{amssymb}
+                \usepackage{gensymb}
+                \usepackage{enumerate}
+                \usepackage{url}
+                \usepackage{amsmath}
+                \newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+                \usepackage{changepage}
+                \usepackage[top=.5in, bottom=1in, left=1in, right=1in]{geometry}
+
+
+                \title {ASTRO 206 Homework 2}
+                \author{Russell Trupiano}
+                \begin{document}
+                \date{Due Tuesday, February 25, 2015}
+
+                \maketitle
+
+                \section {Special Relativity (10 points)}
+                    \begin{adjustwidth}{.6cm}{}
+                        \begin{enumerate}[a)]
+                            \item
+                            Time dilation equation: $\Delta{t'} = \dfrac{\Delta{t}}{\sqrt{1-\dfrac{v^2}{c^2}}}$\\
+                            Solve for $v$:\\
+
+                            $\Delta{t'}\sqrt{1-\dfrac{v^2}{c^2}} = \Delta{t}$\\
+
+                            $(\Delta{t'})^2(1-\dfrac{v^2}{c^2}) = (\Delta{t})^2$\\
+
+                            $1-\dfrac{v^2}{c^2} = \dfrac{(\Delta{t})^2}{(\Delta{t'})^2}$\\
+
+                            $\dfrac{v^2}{c^2} = 1-\dfrac{(\Delta{t})^2}{(\Delta{t'})^2}$\\
+
+                            $v^2 = c^2\Bigg(1-\dfrac{(\Delta{t})^2}{(\Delta{t'})^2}\Bigg)$\\
+
+                            $v = c\sqrt{1-\dfrac{(\Delta{t})^2}{(\Delta{t'})^2}}$\\
+
+                            To live 8 times longer, the ratio $\Delta{t'}:\Delta{t}$ would be 8:1. Therefore, $\Delta{t'} = 8$ and $\Delta{t} = 1$.\\
+
+                            $v = 3e8\sqrt{1-\dfrac{1^2}{8^2}} = 3e8\sqrt{1-\dfrac{1}{64}}$\\
+
+                            $v = $ \textbf{2.976e8 m/s}
+
+                            \item
+                            Time dilation equation (using Lorentz factor): $\Delta{t'} = \gamma\Delta{t}$\\
+                            Solve for $\gamma$:\\
+
+                            $\gamma = \dfrac{\Delta{t'}}{\Delta{t}}$\\
+
+                            $\gamma = 2$\\
+
+                            This conclusion can be reached qualitatively as well considering that the person in motion is experiencing half the time as a person at rest, and that derivation was shown in $(a)$.\\
+
+                            Length contraction equation (using Lorentz factor): $L = \dfrac{L_0}{\gamma}$\\
+                            Solve for $L$:\\
+
+                            $L = \dfrac{1m}{2}$\\
+
+                            $L = $ \textbf{.5m}
+
+
+                        \end{enumerate}
+                    \end{adjustwidth}
+
+                \section {Gravitational Redshift (10 points)}
+                    \begin{adjustwidth}{.85cm}{}
+                        \textbf{Givens:}\\
+                        Gravitational redshift equation (given): $\dfrac{\lambda_2}{\lambda_1} = \Bigg[\dfrac{1-\dfrac{2GM}{{r_2}c^2}}{1-\dfrac{2GM}{{r_1}c^2}}\Bigg]^\frac{1}{2}$. \\
+                        $G = $ 6.67e-11 $m^3kg^{-1}s^{-2}$\\
+                        $c = $ 3e8 $ms^{-1}$\\
+                        $M_{sun} = M_{white\_dwarf} = $ 1.989e30 kg\\
+                        $r_{sun} = $ 6.95e8 m\\
+                        $r_{white\_dwarf} = (0.01)*r_{sun} = $ 6.95e6 m\\
+                        \\
+                        \textbf{Calculations:}\\
+                        Let $\lambda_1 = \lambda_{sun}$ and $\lambda_2 = \lambda_{white\_dwarf}$.\\
+                        $\dfrac{\lambda_2}{\lambda_1} = \Bigg[\dfrac{1-\dfrac{2GM}{{r_2}c^2}}{1-\dfrac{2GM}{{r_1}c^2}}\Bigg]^\frac{1}{2}$\\
+
+                        $ = \Bigg[\dfrac{1-\dfrac{2(6.67e{-11})(1.989e30)}{(6.95e6)(3e8)^2}}{1-\dfrac{2(6.67e{-11})(1.989e30)}{(6.95e8)(3e8)^2}}\Bigg]^\frac{1}{2}$\\
+
+                        $ = \Bigg[\dfrac{1-\dfrac{2948.14}{6.95e6}}{1-\dfrac{2948.14}{6.95e8}}\Bigg]^\frac{1}{2}$\\
+
+                        $ = \Bigg[\dfrac{1-4.24e{-4}}{1-4.24e{-6}}\Bigg]^\frac{1}{2}$\\
+
+                        $ = $ \textbf{.99979}\\
+
+                        \noindent
+                        This fact shows us that there is barely any effect on wavelengths from such a white dwarf due to gravitational redshift. Therefore, we would expect the wavelength from the same hydrogen line from the white dwarf to be \textbf{656.16 nm}: nearly identical to the original.
+                    \end{adjustwidth}
+                \section{Sirius Binary System (30 points)}
+                    \begin{adjustwidth}{.6cm}{}
+                        \begin{enumerate}[a)]
+                            \item
+                            $p_{Sirius} = $ .379 arc-seconds\\
+                            $d_{parsecs} = \dfrac{1}{p_{arc-seconds}}$\\
+                            $d_{parsecs} = \dfrac{1}{.379\:arcseconds} = $ \textbf{2.63 parsecs}\\
+                            \\
+                            $d_{lightyear} = 3.26*d_{parsecs}$\\
+                            $d_{lightyear} = 3.26*2.63\:parsecs = $ \textbf{8.60 light years}
+                            \clearpage
+                            \item
+                            Using the scale in the figure, I approximated the semi major axis of Sirius B about Sirius A to be about 7 arcseconds. From there we can use tigonometry to solve for the semimajor axis in astronomical units.\\
+                            Givens:\\
+                            $p = 7\:arcseconds = \Bigg(\dfrac{7}{3600}\Bigg)\degree = .00194\degree$\\
+                            $d = 2.63\:pc$ (From $(a)$)\\
+                            $tan(p) = \dfrac{a}{d}$\\
+
+                            Solve for $a$:\\
+                            $a = d*tan(p) = 2.63*tan(.00194) = 8.91e{-5}\:pc$\\
+                            $1\:pc = 206264\:AU$\\
+                            $a = 8.91e{-5}*206264 =$ \textbf{18.37 AU}
+                            \item
+                            $\lambda_{Sirius\:A} = $ 292 nm\\
+                            Wein's Law: $\lambda_{max} \approx \dfrac{2.9e6}{T(kelvin)}$nm\\
+                            $T \approx \dfrac{2.9e6}{292} \approx $ \textbf{9931 K}\\
+                            Sirius A is much hotter than the sun which has a temperature of 5778 K.\\
+                            Sirius A is a class-A star.
+                            \item
+                            From Figure 2, a line drawn straight up from about the 10,000K marker on the x-axis itersects the white dwarf luminosity curve at about $20*L_{\bigodot}$. Therefore we would estimate the luminosity of Sirius A to be approximately $2.11*M_{\bigodot} = $ \textbf{4.20e30 kg}.
+                            \item
+                            Sirius B's period of its orbit around Sirius A is approximately \textbf{50 years}.
+                            \item
+                            Kepler's 3rd Law Generalized: $P^2 = \dfrac{4{\pi}^2}{G(M_A + M_B)}a^3$\\
+                            Solving for $M_B$:\\
+
+                            $\dfrac{GP^2}{4a^3{\pi}^2} = \dfrac{1}{(M_A + M_B)}$\\
+
+                            $\dfrac{4a^3{\pi}^2}{GP^2} = M_A + M_B$\\
+
+                            $\dfrac{4a^3{\pi}^2}{GP^2}-M_A = M_B$\\
+
+                            $M_B = \dfrac{4(18.37AU*1.5e11\frac{m}{AU})^3{\pi}^2}{(6.67e{-11})(50yr*3.16e7\frac{s}{year})^2}-4.2e30kg$\\
+
+                            $M_B = $ \textbf{7.60e29 kg}\\
+
+                            This answer is slightly off from the actual mass of Sirius B, but it is likely to do with the approximation method used in $(d)$; however, it does seem to be the right order of magnitude, and also Sirius A was approximated slightly higher than it should have been.
+                            \clearpage
+                            \item
+                            Relationship between magnitude and luminosity: $m_A - m_B = -2.5log_{10}\Bigg(\dfrac{L_A}{L_B}\Bigg)$\\
+                            $\Delta{m} = m_A - m_B = 7.5$\\
+
+                            $L_A = 25.4L_{\bigodot}$\\
+
+                            Solve for $L_B$:\\
+
+                            $\Delta{m} = -2.5log_{10}\Bigg(\dfrac{L_A}{L_B}\Bigg)$\\
+
+                            $\dfrac{L_A}{L_B} = 10^{\Delta{m}/2.5}$\\
+
+                            $L_B = \dfrac{L_A}{10^{\Delta{m}/2.5}} = \dfrac{25.4}{10^{3}}$\\
+
+                            $L_B = $ \textbf{.0254} $L_{\bigodot}$
+
+                            \item
+                            Luminosity equation: $L = 4{\pi}r^2{\sigma}T^4$\\
+
+                            $\sigma = 5.67*10^{-8}\frac{W}{m^2K^4}$\\
+
+                            $L = .0254\:L_{\bigodot} = 9.77e24\:W$ (From $(h)$)\\
+
+                            Solve for $r$:\\
+
+                            $r = \sqrt{\dfrac{L}{4{\pi}{\sigma}T^4}}$\\
+
+                            $r = \sqrt{\dfrac{9.77e24}{4{\pi}{(5.67*10^{-8})({25193}^4)}}}$\\
+
+                            $r = 5.84e6$ m$ = $ \textbf{5840 km}\\
+                            \item
+                            With this information we can calculate the density of Sirius B.\\
+
+                            $m = 7.60e32\:g$ and $V = \frac{4}{3}\pi r^3 = 8.34e26\:{cm}^3$ (From $(f)$ and $(h)$)\\
+
+                            $\rho = \dfrac{m}{V}$\\
+
+                            $\rho = \dfrac{7.60e32}{8.34e26} = 9.11e5\frac{g}{cm^3}$\\
+
+                            Knowing that the average density of a neutron star is $2e14\frac{g}{cm^3}$ and a black hole even more dense, we know that it would be unreasonable to classify Sirius B as such. Additionally, from its small radius we can then conclude that Sirius B is in fact a white dwarf.
+                        \end{enumerate}
+                    \end{adjustwidth}
+
+                \end{document}
+        div.right-document#canvas-wrapper
+            <div></div>
+
+    section.footer-section
+        footer
+            footer
+
+
+    script(src="/lib/ace-src/ace.js" type="text/javascript" charset="utf-8")
+    script(src="/lib/ace-src/ext-language_tools.js")
+    script.
+        ace.require("ace/ext/language_tools");
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/clouds");
+        editor.getSession().setMode("ace/mode/latex");
+        editor.$blockScrolling = Infinity
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
