@@ -11,12 +11,15 @@
  */
 global-reset()
 
+fonts = helvetica, arial, sans-serif
+
 /*
  * Store the main color and
  * background color as variables
  */
-main-color = #990033
+main-color = #003399
 offwhite = #eeeeee
+darkgrey = #333333
 
 // screen sizes
 extralarge = 1400px
@@ -51,15 +54,58 @@ bg-size ()
 
 html
     height 100%
+    font-family fonts
 
     section.header-section
         background main-color
-        height 600px
+        height 3em
+        width 100%
+        // box-shadow: 1px 1px 15px #888888;
 
         div.header-content
             color offwhite
-            font-size content-large-title
+            font-size content-large
             align(horizontal)
-            margin-top 300px
             width 100%
-            text-align center
+            text-align left
+
+            h1
+                margin-top .5em
+                padding 0 16px
+
+    section.menu-section
+        height 2em
+        border-bottom 2px solid #cccccc
+
+        div.menu-content
+            color darkgrey
+            font-size content-profile
+            align(horizontal)
+            width 100%
+            text-align left
+            margin-top .5em
+
+
+            span
+                padding 0 16px
+
+    section.document-section
+        padding 16px
+
+        div.left-document
+            column(1/2, gutter: 1)
+            height 835px
+            background #330099
+
+            div#editor
+                height 100%
+                width 100%
+                cf()
+
+        div.right-document
+            column(1/2, gutter: 1)
+            height 835px
+            background #990033
+
+
+

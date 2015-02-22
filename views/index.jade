@@ -4,6 +4,30 @@ block content
 
     section.header-section
         div.header-content
-            h1 Here's your home page
+            h1 LiveLatex
+
+    section.menu-section
+        div.menu-content
+            span menu stuff
+
+    section.document-section
+        div.left-document
+            div#editor.
+                function foo(items) {
+                    var x = "All this is syntax highlighted";
+                    return x;
+                }
+        div.right-document
+            span right
 
 
+    script(src="/lib/ace-src/ace.js" type="text/javascript" charset="utf-8")
+    script.
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/clouds");
+        editor.getSession().setMode("ace/mode/javascript");
+        ace.require("ace/ext/language_tools");
+        editor.$blockScrolling = Infinity
+        editor.setOptions({
+            enableBasicAutocompletion: true
+        });
