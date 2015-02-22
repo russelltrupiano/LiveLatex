@@ -2,10 +2,6 @@ extends layout
 
 block content
 
-    section.header-section
-        div.header-content
-            h1 LiveLatex
-
     section.menu-section
         div.menu-content
             span menu stuff
@@ -13,21 +9,26 @@ block content
     section.document-section
         div.left-document
             div#editor.
-                function foo(items) {
-                    var x = "All this is syntax highlighted";
-                    return x;
-                }
+                \section{Hey there}
+                \subsection{yoyoyyo}
         div.right-document
             span right
 
+    section.footer-section
+        footer
+            footer
+
 
     script(src="/lib/ace-src/ace.js" type="text/javascript" charset="utf-8")
+    script(src="/lib/ace-src/ext-language_tools.js")
     script.
+        ace.require("ace/ext/language_tools");
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/clouds");
-        editor.getSession().setMode("ace/mode/javascript");
-        ace.require("ace/ext/language_tools");
+        editor.getSession().setMode("ace/mode/latex");
         editor.$blockScrolling = Infinity
         editor.setOptions({
-            enableBasicAutocompletion: true
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
         });

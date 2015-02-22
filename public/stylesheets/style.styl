@@ -20,6 +20,7 @@ fonts = helvetica, arial, sans-serif
 main-color = #003399
 offwhite = #eeeeee
 darkgrey = #333333
+lightgrey = #aaaaaa
 
 // screen sizes
 extralarge = 1400px
@@ -52,7 +53,7 @@ bg-size ()
     height 0px
     overflow hidden
 
-html
+html, body
     height 100%
     font-family fonts
 
@@ -60,7 +61,6 @@ html
         background main-color
         height 3em
         width 100%
-        // box-shadow: 1px 1px 15px #888888;
 
         div.header-content
             color offwhite
@@ -90,11 +90,12 @@ html
                 padding 0 16px
 
     section.document-section
-        padding 16px
+        padding 0
+        cf()
 
         div.left-document
             column(1/2, gutter: 1)
-            height 835px
+            height 846px
             background #330099
 
             div#editor
@@ -104,8 +105,20 @@ html
 
         div.right-document
             column(1/2, gutter: 1)
-            height 835px
+            height 846px
             background #990033
+
+    section.footer-section
+        footer
+            background lightgrey
+            height 1.5em
+            width 100%
+            opacity 0.9
+            position absolute
+            left 0
+            bottom 0
+            z-index 1000
+
 
 
 
